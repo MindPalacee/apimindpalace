@@ -47,7 +47,7 @@ _👌 AS ROTAS SEMPRE TERÃO: **/api/v1/** 👌_
 >```
 
 ---
-### **📍Rota de Autenticação/login do usuario:** --_/api/v1/GetUser_
+### **📍Rota de Autenticação/login do usuario:** --_/api/v1/user_
 
 <br>
 
@@ -115,4 +115,3 @@ _👌 AS ROTAS SEMPRE TERÃO: **/api/v1/** 👌_
 >	"ok":"example recebeu 10000R$"
 >}
 >```
-
