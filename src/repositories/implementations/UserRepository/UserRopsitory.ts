@@ -11,6 +11,14 @@ type ITokenData = {
   time: string;
 };
 
+type ITaskData = {
+  title: string;
+  descripition: string;
+  date_time: string;
+  status: string,
+  authorid: string
+};
+
 export class UserRopsitory implements IUserRepository {
   private prisma: any = new prisma.PrismaClient();
   private crypt: Function = hash;
@@ -62,6 +70,26 @@ export class UserRopsitory implements IUserRepository {
   async verifyPass(pass: string, passU: string): Promise<any> {
     const passw = await this.verifyP(pass, passU);
     return passw;
+  }
+
+  async saveTask(task: ITaskData): Promise<any> {
+    const cratetask = await  this.prisma.user.create({
+      data: {
+        task: {
+          create: [
+            {
+              title: task.title,
+              descripition: task.descripition,
+              data_time: task.date_time,
+              status: task.status,
+              authorId: task.authorid,
+            }
+          ],
+        },
+      },
+    })
+
+    return cratetask
   }
 
 }
